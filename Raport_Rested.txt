@@ -1,0 +1,497 @@
+1) Wprowadzenie przedmiotów do systemu w podanej kolejności
+
+POST
+URL
+http://localhost:8080/test/subjects
+Content-Type
+application/json
+
+Type
+JSON
+nazwa
+Metodologie obiektowe
+
+ects
+2
+
+sala
+216
+
+egzamin
+tak
+
+Response (0.423s) - http://localhost:8080/test/subjects
+200
+Content-Length: 0
+Date: Fri, 23 Jun 2023 20:43:30 GMT
+Keep-Alive: timeout=60
+Connection: keep-alive
+
+
+POST
+URL
+http://localhost:8080/test/subjects
+Content-Type
+application/json
+
+Type
+JSON
+nazwa
+Testowanie oprogramowania
+
+ects
+1
+
+sala
+216
+
+egzamin
+nie
+
+Response (0.028s) - http://localhost:8080/test/subjects
+200
+Content-Length: 0
+Date: Fri, 23 Jun 2023 20:45:02 GMT
+Keep-Alive: timeout=60
+Connection: keep-alive
+
+
+POST
+URL
+http://localhost:8080/test/subjects
+Content-Type
+application/json
+
+Type
+JSON
+nazwa
+Technologie i aplikacje webowe
+
+ects
+3
+
+sala
+208
+
+egzamin
+nie
+
+Response (0.01s) - http://localhost:8080/test/subjects
+200
+Content-Length: 0
+Date: Fri, 23 Jun 2023 20:46:13 GMT
+Keep-Alive: timeout=60
+Connection: keep-alive
+
+
+POST
+URL
+http://localhost:8080/test/subjects
+Content-Type
+application/json
+
+Type
+JSON
+nazwa
+Zarządzanie projektem informatycznym
+
+ects
+2
+
+sala
+216
+
+egzamin
+nie
+
+Response (0.025s) - http://localhost:8080/test/subjects
+200
+Content-Length: 0
+Date: Fri, 23 Jun 2023 20:47:41 GMT
+Keep-Alive: timeout=60
+Connection: keep-alive
+
+
+POST
+URL
+http://localhost:8080/test/subjects
+Content-Type
+application/json
+
+Type
+JSON
+nazwa
+Zaawansowane technologie bazodanowe
+
+ects
+3
+
+sala
+208
+
+egzamin
+nie
+
+Response (0.023s) - http://localhost:8080/test/subjects
+200
+Content-Length: 0
+Date: Fri, 23 Jun 2023 20:48:23 GMT
+Keep-Alive: timeout=60
+Connection: keep-alive
+
+
+POST
+URL
+http://localhost:8080/test/subjects
+Content-Type
+application/json
+
+Type
+JSON
+nazwa
+Technologie komponentowe i sieciowe
+
+ects
+2
+
+sala
+208
+
+egzamin
+tak
+
+Response (0.025s) - http://localhost:8080/test/subjects
+200
+Content-Length: 0
+Date: Fri, 23 Jun 2023 20:49:04 GMT
+Keep-Alive: timeout=60
+Connection: keep-alive
+
+2) Pobranie wszystkich przedmiotów
+
+GET
+URL
+http://localhost:8080/test/subjects
+Content-Type
+application/json
+
+Response (0.071s) - http://localhost:8080/test/subjects
+200
+Content-Type: application/json
+Transfer-Encoding: chunked
+Date: Fri, 23 Jun 2023 20:50:00 GMT
+Keep-Alive: timeout=60
+Connection: keep-alive
+[
+  {
+    "id": 1,
+    "nazwa": "Metodologie obiektowe",
+    "ects": 2,
+    "sala": 216,
+    "egzamin": "tak"
+  },
+  {
+    "id": 2,
+    "nazwa": "Testowanie oprogramowania",
+    "ects": 1,
+    "sala": 216,
+    "egzamin": "nie"
+  },
+  {
+    "id": 3,
+    "nazwa": "Technologie i aplikacje webowe",
+    "ects": 3,
+    "sala": 208,
+    "egzamin": "nie"
+  },
+  {
+    "id": 4,
+    "nazwa": "Zarządzanie projektem informatycznym",
+    "ects": 2,
+    "sala": 216,
+    "egzamin": "nie"
+  },
+  {
+    "id": 5,
+    "nazwa": "Zaawansowane technologie bazodanowe",
+    "ects": 3,
+    "sala": 208,
+    "egzamin": "nie"
+  },
+  {
+    "id": 6,
+    "nazwa": "Technologie komponentowe i sieciowe",
+    "ects": 2,
+    "sala": 208,
+    "egzamin": "tak"
+  }
+]
+
+3) Pobranie przedmiotów, które mają egzamin
+
+GET
+URL
+http://localhost:8080/test/subjects?egzamin=tak
+Content-Type
+application/json
+
+Response (0.017s) - http://localhost:8080/test/subjects?egzamin=tak
+200
+Content-Type: application/json
+Transfer-Encoding: chunked
+Date: Fri, 23 Jun 2023 20:51:29 GMT
+Keep-Alive: timeout=60
+Connection: keep-alive
+[
+  {
+    "id": 1,
+    "nazwa": "Metodologie obiektowe",
+    "ects": 2,
+    "sala": 216,
+    "egzamin": "tak"
+  },
+  {
+    "id": 6,
+    "nazwa": "Technologie komponentowe i sieciowe",
+    "ects": 2,
+    "sala": 208,
+    "egzamin": "tak"
+  }
+]
+
+4) Pobranie przedmiotów, które odbywają się w sali 216
+
+GET
+URL
+http://localhost:8080/test/subjects?sala=216
+Content-Type
+application/json
+
+Response (0.031s) - http://localhost:8080/test/subjects?sala=216
+200
+Content-Type: application/json
+Transfer-Encoding: chunked
+Date: Fri, 23 Jun 2023 20:52:33 GMT
+Keep-Alive: timeout=60
+Connection: keep-alive
+[
+  {
+    "id": 1,
+    "nazwa": "Metodologie obiektowe",
+    "ects": 2,
+    "sala": 216,
+    "egzamin": "tak"
+  },
+  {
+    "id": 2,
+    "nazwa": "Testowanie oprogramowania",
+    "ects": 1,
+    "sala": 216,
+    "egzamin": "nie"
+  },
+  {
+    "id": 4,
+    "nazwa": "Zarządzanie projektem informatycznym",
+    "ects": 2,
+    "sala": 216,
+    "egzamin": "nie"
+  }
+]
+
+5) Pobranie przedmiotów które nie mają egzaminu i odbywają się w sali 208
+
+GET
+URL
+http://localhost:8080/test/subjects?egzamin=nie&sala=208
+Content-Type
+application/json
+
+Response (0.018s) - http://localhost:8080/test/subjects?egzamin=nie&sala=208
+200
+Content-Type: application/json
+Transfer-Encoding: chunked
+Date: Fri, 23 Jun 2023 20:53:19 GMT
+Keep-Alive: timeout=60
+Connection: keep-alive
+[
+  {
+    "id": 3,
+    "nazwa": "Technologie i aplikacje webowe",
+    "ects": 3,
+    "sala": 208,
+    "egzamin": "nie"
+  },
+  {
+    "id": 5,
+    "nazwa": "Zaawansowane technologie bazodanowe",
+    "ects": 3,
+    "sala": 208,
+    "egzamin": "nie"
+  }
+]
+
+6) Pobranie przedmiotu o identyfikatorze 3
+
+GET
+URL
+http://localhost:8080/test/subjects/3
+Content-Type
+application/json
+
+Response (0.036s) - http://localhost:8080/test/subjects/3
+200
+Content-Type: application/json
+Transfer-Encoding: chunked
+Date: Fri, 23 Jun 2023 20:53:56 GMT
+Keep-Alive: timeout=60
+Connection: keep-alive
+{
+  "id": 3,
+  "nazwa": "Technologie i aplikacje webowe",
+  "ects": 3,
+  "sala": 208,
+  "egzamin": "nie"
+}
+
+7) Pobranie przedmiotu o identyfikatorze 15
+
+GET
+URL
+http://localhost:8080/test/subjects/15
+Content-Type
+application/json
+
+Response (0.032s) - http://localhost:8080/test/subjects/15
+404
+Content-Length: 0
+Date: Fri, 23 Jun 2023 20:54:38 GMT
+Keep-Alive: timeout=60
+Connection: keep-alive
+
+8) Usunięcie przedmiotu o identyfikatorze 2
+
+DELETE
+URL
+http://localhost:8080/test/subjects/2
+Content-Type
+application/json
+
+Type
+JSON
+nazwa
+Technologie komponentowe i sieciowe
+
+ects
+2
+
+sala
+208
+
+egzamin
+tak
+
+Response (0.017s) - http://localhost:8080/test/subjects/2
+204
+Date: Fri, 23 Jun 2023 20:56:02 GMT
+Keep-Alive: timeout=60
+Connection: keep-alive
+
+9) Pobranie wszystkich przedmiotów
+
+GET
+URL
+http://localhost:8080/test/subjects
+Content-Type
+application/json
+
+Response (0.038s) - http://localhost:8080/test/subjects
+200
+Content-Type: application/json
+Transfer-Encoding: chunked
+Date: Fri, 23 Jun 2023 20:56:35 GMT
+Keep-Alive: timeout=60
+Connection: keep-alive
+[
+  {
+    "id": 1,
+    "nazwa": "Metodologie obiektowe",
+    "ects": 2,
+    "sala": 216,
+    "egzamin": "tak"
+  },
+  {
+    "id": 3,
+    "nazwa": "Technologie i aplikacje webowe",
+    "ects": 3,
+    "sala": 208,
+    "egzamin": "nie"
+  },
+  {
+    "id": 4,
+    "nazwa": "Zarządzanie projektem informatycznym",
+    "ects": 2,
+    "sala": 216,
+    "egzamin": "nie"
+  },
+  {
+    "id": 5,
+    "nazwa": "Zaawansowane technologie bazodanowe",
+    "ects": 3,
+    "sala": 208,
+    "egzamin": "nie"
+  },
+  {
+    "id": 6,
+    "nazwa": "Technologie komponentowe i sieciowe",
+    "ects": 2,
+    "sala": 208,
+    "egzamin": "tak"
+  }
+]
+
+10) Usunięcie wszystkich przedmiotów
+
+DELETE
+URL
+http://localhost:8080/test/subjects
+Content-Type
+application/json
+
+Type
+JSON
+nazwa
+Technologie komponentowe i sieciowe
+
+ects
+2
+
+sala
+208
+
+egzamin
+tak
+
+Response (0.028s) - http://localhost:8080/test/subjects
+200
+Content-Length: 0
+Date: Fri, 23 Jun 2023 20:57:23 GMT
+Keep-Alive: timeout=60
+Connection: keep-alive
+
+11) Pobranie wszystkich przedmiotów
+
+GET
+URL
+http://localhost:8080/test/subjects
+Content-Type
+application/json
+
+Response (0.029s) - http://localhost:8080/test/subjects
+200
+Content-Type: application/json
+Transfer-Encoding: chunked
+Date: Fri, 23 Jun 2023 20:58:02 GMT
+Keep-Alive: timeout=60
+Connection: keep-alive
+[]
+
